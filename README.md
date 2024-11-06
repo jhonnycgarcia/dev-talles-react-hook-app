@@ -12,3 +12,5 @@ Currently, two official plugins are available:
 `https://fernando-herrera.com/course/react-query/`
 
 `https://tanstack.com/query/latest`
+
+`https://es.reactjs.org/docs/hooks-reference.html#uselayouteffect`
