@@ -13,7 +13,8 @@ import './index.css'
 // import { Layout } from './05-useLayoutEffect/Layout'
 // import { Memorize } from './06-memos/Memorize'
 // import { MemorizeHook } from './06-memos/MemorizeHook'
-import { CallbackHook } from './06-memos/CallbackHook'
+// import { CallbackHook } from './06-memos/CallbackHook'
+import { Padre } from './07-tarea-memo/Padre'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -27,6 +28,7 @@ createRoot(document.getElementById('root')).render(
     {/* <Layout /> */}
     {/* <Memorize /> */}
     {/* <MemorizeHook /> */}
-    <CallbackHook />
+    {/* <CallbackHook /> */}
+    <Padre />
   </StrictMode>,
 )
