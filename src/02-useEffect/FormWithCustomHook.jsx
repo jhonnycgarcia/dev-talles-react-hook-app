@@ -2,7 +2,7 @@ import { useForm } from "../hooks/useForm";
 
 export const FormWithCustomHook = () => {
 
-    const { username, email, password, onInputChange } = useForm({
+    const { username, email, password, onInputChange, onReset } = useForm({
         username: '',
         email: '',
         password: '',
@@ -39,6 +39,13 @@ export const FormWithCustomHook = () => {
                 value={password}
                 onChange={onInputChange}
             />
+
+            <button 
+                className="btn btn-primary mt-2"
+                onClick={onReset}
+            >
+                Borrar
+            </button>
         </>
     )
 }
