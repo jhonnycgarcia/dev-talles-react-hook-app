@@ -6,7 +6,7 @@ export const CallbackHook = () => {
     const [counter, setCounter] = useState(10);
 
     const increment = useCallback(
-      () => { setCounter((prev) => prev + 1) },
+      (value) => { setCounter((prev) => prev + value) },
       [],
     );
 
@@ -19,7 +19,7 @@ export const CallbackHook = () => {
         <>
             <h1>UseCallback Hook: {counter}</h1>
             <hr />
-            <ShowIncrement increment={increment} />
+            <ShowIncrement increment={() => increment(5)} />
         </>
     )
 }
