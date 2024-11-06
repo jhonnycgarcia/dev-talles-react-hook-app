@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 
 export const PokemonCard = ({ id, name, sprites = []}) => {
   return (
@@ -23,4 +24,10 @@ export const PokemonCard = ({ id, name, sprites = []}) => {
         </div>
     </section>
   )
+}
+
+PokemonCard.propTypes = {
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    sprites: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
