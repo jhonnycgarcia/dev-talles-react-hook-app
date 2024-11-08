@@ -1,28 +1,37 @@
-import { useReducer } from "react"
+import { useEffect, useReducer } from "react"
 import { todoReducer } from "./todoReducer";
 import { TodoList } from "./TodoList";
 import { TodoAdd } from "./TodoAdd";
 
 const initialState = [
-    {
-        id: new Date().getTime(),
-        description: 'Recolectar la piedra del Alma',
-        done: false,
-    },
-    {
-        id: new Date().getTime() * 3,
-        description: 'Recolectar la piedra del Poder',
-        done: false,
-    },
-    {
-        id: new Date().getTime() * 6,
-        description: 'Recolectar la piedra de la Mente',
-        done: false,
-    },
+    // {
+    //     id: new Date().getTime(),
+    //     description: 'Recolectar la piedra del Alma',
+    //     done: false,
+    // },
+    // {
+    //     id: new Date().getTime() * 3,
+    //     description: 'Recolectar la piedra del Poder',
+    //     done: false,
+    // },
+    // {
+    //     id: new Date().getTime() * 6,
+    //     description: 'Recolectar la piedra de la Mente',
+    //     done: false,
+    // },
 ];
 
+const init = () => {
+    return JSON.parse(localStorage.getItem('todos')) || initialState;
+}
+
 export const TodoApp = () => {
-    const [todos, dispatchTodos] = useReducer(todoReducer, initialState);
+    const [todos, dispatchTodos] = useReducer(todoReducer, initialState, init);
+
+    // Guardar en localStorage los todos cuando cambien
+    useEffect(() => {
+        localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos]);
 
     const handlerNewTodo = (todo) => {
         console.log({ todo });
