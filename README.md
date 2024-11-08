@@ -14,5 +14,3 @@ Currently, two official plugins are available:
 `https://tanstack.com/query/latest`
 
 `https://es.reactjs.org/docs/hooks-reference.html#uselayouteffect`
-
-next
