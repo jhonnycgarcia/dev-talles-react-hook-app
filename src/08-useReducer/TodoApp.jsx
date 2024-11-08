@@ -1,5 +1,7 @@
 import { useReducer } from "react"
 import { todoReducer } from "./todoReducer";
+import { TodoList } from "./TodoList";
+import { TodoAdd } from "./TodoAdd";
 
 const initialState = [
     {
@@ -12,10 +14,19 @@ const initialState = [
         description: 'Recolectar la piedra del Poder',
         done: false,
     },
+    {
+        id: new Date().getTime() * 6,
+        description: 'Recolectar la piedra de la Mente',
+        done: false,
+    },
 ];
 
 export const TodoApp = () => {
-    const [todos, dispatchTodos] = useReducer(todoReducer, initialState)
+    const [todos, dispatchTodos] = useReducer(todoReducer, initialState);
+
+    const handlerNewTodo = (todo) => {
+        console.log({ todo });
+    };
 
     return (
         <>
@@ -26,42 +37,13 @@ export const TodoApp = () => {
 
             <div className="row">
                 <div className="col-7">
-                    <ul className="list-group">
-                        {
-                            todos.map((todo) => (
-                                <li 
-                                    key={todo.id}
-                                    className="list-group-item d-flex justify-content-between"
-                                >
-                                    <span className="align-self-center">
-                                        Item1
-                                    </span>
-                                    <button className="btn btn-outline-danger">
-                                        Borrar
-                                    </button>
-                                </li>
-                            ))
-                        }
-                        
-                    </ul>
+                    <TodoList todos={todos} />
                 </div>
 
                 <div className="col-5">
                     <h4>Agregar Todos</h4>
                     <hr />
-                    <form>
-                        <input
-                            type="text"
-                            placeholder="¿Qué necesitas hacer?"
-                            className="form-control"
-                        />
-                        <button
-                            type="submit"
-                            className="btn btn-outline-primary mt-2"
-                        >
-                            Agregar
-                        </button>
-                    </form>
+                    <TodoAdd onNewTodo={handlerNewTodo}/>
                 </div>
 
             </div>
