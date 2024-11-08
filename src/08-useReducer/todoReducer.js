@@ -7,6 +7,13 @@ export const todoReducer = (initialState, action) => {
             return [ ...initialState, payload ];
         case 'DELETE':
             return initialState.filter(todo => todo.id !== payload);
+        case 'TOGGLE':
+            return initialState.map(todo => {
+                if(todo.id === payload) {
+                    return { ...todo, done: !todo.done };
+                }
+                return todo;
+            });
         default:
             return initialState;
     }

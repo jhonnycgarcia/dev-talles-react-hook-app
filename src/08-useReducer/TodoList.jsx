@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { TodoItem } from "./TodoItem";
 
-export const TodoList = ({todos = [], onDeleteTodo}) => {
+export const TodoList = ({todos = [], onDeleteTodo, onToggleTodo}) => {
 
   return (
     <ul className="list-group">
@@ -11,6 +11,7 @@ export const TodoList = ({todos = [], onDeleteTodo}) => {
                   key={todo.id} 
                   todo={todo}
                   onDeleteTodo={onDeleteTodo}
+                  onToggleTodo={onToggleTodo}
                 />
             ))
         }
@@ -21,4 +22,5 @@ export const TodoList = ({todos = [], onDeleteTodo}) => {
 TodoList.propTypes = {
     todos: PropTypes.array,
     onDeleteTodo: PropTypes.func,
+    onToggleTodo: PropTypes.func,
 }
