@@ -1,12 +1,15 @@
 import PropTypes from "prop-types";
 
-export const TodoItem = ({todo}) => {
+export const TodoItem = ({todo, onDeleteTodo}) => {
   return (
     <li className="list-group-item d-flex justify-content-between">
         <span className="align-self-center">
             {todo.description}
         </span>
-        <button className="btn btn-outline-danger">
+        <button 
+          className="btn btn-outline-danger"
+          onClick={() => onDeleteTodo(todo.id)}
+        >
             Borrar
         </button>
     </li>
@@ -15,4 +18,5 @@ export const TodoItem = ({todo}) => {
 
 TodoItem.propTypes = {
     todo: PropTypes.object.isRequired,
+    onDeleteTodo: PropTypes.func,
 }
