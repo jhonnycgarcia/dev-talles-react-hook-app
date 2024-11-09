@@ -1,7 +1,15 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter, createBrowserRouter } from 'react-router-dom';
 
 import './index.css'
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <div>Hello world!</div>,
+  },
+]);
 
 // import { HooksApp } from './HooksApp'
 // import { CounterApp } from './01-useState/CounterApp'
@@ -15,22 +23,12 @@ import './index.css'
 // import { MemorizeHook } from './06-memos/MemorizeHook'
 // import { CallbackHook } from './06-memos/CallbackHook'
 // import { Padre } from './07-tarea-memo/Padre'
-import { TodoApp } from './08-useReducer/TodoApp'
+// import { TodoApp } from './08-useReducer/TodoApp'
+import { MainApp } from './09-useContext/MainApp'
+
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    {/* <HooksApp /> */}
-    {/* <CounterApp /> */}
-    {/* <CounterWithCustomHook /> */}
-    {/* <SimpleForm /> */}
-    {/* <FormWithCustomHook /> */}
-    {/* <MultipleCustomHooks /> */}
-    {/* <FocusScreen /> */}
-    {/* <Layout /> */}
-    {/* <Memorize /> */}
-    {/* <MemorizeHook /> */}
-    {/* <CallbackHook /> */}
-    {/* <Padre /> */}
-    <TodoApp />
-  </StrictMode>,
+  <BrowserRouter>
+    <MainApp />
+  </BrowserRouter>,
 )
