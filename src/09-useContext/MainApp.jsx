@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom"
 import { HomePage } from "./HomePage"
 import { LoginPage } from "./LoginPage"
 import { AboutPage } from "./AboutPage"
+import { Navbar } from "./Navbar"
 
 export const MainApp = () => {
     return (
@@ -9,6 +10,7 @@ export const MainApp = () => {
             <h1>Main App</h1>
             <hr />
 
+            <Navbar />
 
             <Routes>
                 <Route path="/" element={<HomePage />} />
