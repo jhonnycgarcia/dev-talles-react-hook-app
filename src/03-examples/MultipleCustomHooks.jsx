@@ -31,12 +31,16 @@ export const MultipleCustomHooks = () => {
             <button
                 className="btn btn-primary mt-2"
                 onClick={() => counter > 1 && decrement()}
+                aria-label="previous-btn"
+                disabled={ isLoading || counter <= 1 }
             >
                 Anterior
             </button>
             <button
                 className="btn btn-primary mt-2"
                 onClick={() => increment()}
+                aria-label="next-btn"
+                disabled={ isLoading }
             >
                 Siguiente
             </button>
