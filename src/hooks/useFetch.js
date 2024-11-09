@@ -23,7 +23,7 @@ export const useFetch = (url) => {
     const getFetch = async () => {
 
         if(localCache[url]) {
-            console.log('Usando cache');
+            // console.log('Usando cache');
             setState({
                 data: localCache[url],
                 loading: false,

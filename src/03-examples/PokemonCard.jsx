@@ -7,7 +7,7 @@ export const PokemonCard = ({ id, name, sprites = []}) => {
     const [boxSise, setBoxSise] = useState({ width: 0, height: 0 });
 
     useLayoutEffect(() => {
-        console.log('titleTag', titleTag.current.getBoundingClientRect());
+        // console.log('titleTag', titleTag.current.getBoundingClientRect());
         const { width, height } = titleTag.current.getBoundingClientRect();
         setBoxSise({ width, height });
     }, [name])
