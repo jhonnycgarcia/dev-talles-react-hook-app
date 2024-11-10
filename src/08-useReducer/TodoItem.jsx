@@ -5,6 +5,7 @@ export const TodoItem = ({todo, onDeleteTodo, onToggleTodo}) => {
     <li className="list-group-item d-flex justify-content-between">
         <span 
           className={ `align-self-center ${todo.done ? 'text-decoration-line-through' : ''}` }
+          aria-label='item-description'
           onClick={() => onToggleTodo(todo.id)}
         >
             {todo.description}
@@ -21,6 +22,6 @@ export const TodoItem = ({todo, onDeleteTodo, onToggleTodo}) => {
 
 TodoItem.propTypes = {
     todo: PropTypes.object.isRequired,
-    onDeleteTodo: PropTypes.func,
-    onToggleTodo: PropTypes.func,
+    onDeleteTodo: PropTypes.func.isRequired,
+    onToggleTodo: PropTypes.func.isRequired
 }
